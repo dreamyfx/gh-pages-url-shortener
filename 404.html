@@ -9,7 +9,8 @@
        */
       // Format: https://api.github.com/repos/{owner}/{repo}/issues/
       var GITHUB_ISSUES_LINK =
-        "TOKEN_PLACEHOLDER";
+        "https://api.github.com/repos/dreamyfx/gh-pages-url-shortener/issues/";
+      var TOKEN = "TOKEN_PLACEHOLDER";
       var PATH_SEGMENTS_TO_SKIP = 0;
 
       /**
@@ -68,6 +69,7 @@
           location.replace(homepage);
         };
         xhr.open("GET", GITHUB_ISSUES_LINK + issueNumber);
+        xhr.setRequestHeader("Authorization", "token " + TOKEN);
         xhr.send();
       }
 
